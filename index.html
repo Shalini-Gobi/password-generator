@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <style>
+        body {
+            background-color: black; /* Setting background color to black */
+            color: white; /* Setting text color to white */
+            text-align: center; /* Aligning text to center */
+        }
+        form {
+            margin-top: 20px; /* Adding some margin from the top */
+        }
+    </style>
+</head>
+<body>
+    <h1>Password Generator</h1>
+    <form action="/generate" method="post">
+        <label for="length">Password Length:</label>
+        <input type="number" id="length" name="length" min="6" max="20" required>
+        <button type="submit">Generate</button>
+    </form>
+    {% if password %}
+        <p>Your generated password: {{ password }}</p>
+    {% endif %}
+</body>
+</html>
